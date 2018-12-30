@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+	 xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>greeter</title>
+<script src="js/index_admin.js"></script>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css'/>
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'/>
+<link rel="stylesheet" href="css/admin.css"></link>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</h:head>
+<h:body>
+<ul class="nav">
+  <li class="navItem"><a href="login.xhtml">Home</a></li>
+  <li class="navItem"><a href="aboutus.html">About us</a></li>
+  <li class="navItem"><a onclick="myFunction1()">Help</a></li>
+
+</ul>
+<div class="signupSection">
+  <div class="info">
+    <h2>Administrator</h2>
+    <i class="icon ion-ios-ionic-outline" ></i>
+    <p>Controls the privileges of users</p>
+  </div>
+  <h:form id="adminForm" class ="signupForm">
+  
+    <h2>Admin Page</h2>
+    <ul class="noBullet">
+      <li>
+        
+             
+             <h:inputText id="admin_name" class ="inputFields" a:placeholder="username"
+                 value="#{adminController.admin_name}" />
+      </li>
+      <li>
+      
+             <h:inputText id="user_role" class ="inputFields" a:placeholder=" User Role"
+                 value="#{adminController.user_role}" />    
+                  </li>
+     
+      <li id="center-btn">
+      <h:commandButton id="join-btn" value="change role" class="join-btn"  alt="Join"
+                action="#{adminController.change_role}" />
+              </li>
+              <li>
+               <br/>
+         <br/>
+         <h:outputText value="#{adminController.error_log}" class ="inputFields"
+            rendered="#{not empty adminController.error_log}" />
+              </li>
+    </ul>
+  </h:form>
+</div>
+   <!--  <script src="js/index_admin.js"></script> -->
+
+ <div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <p id="help" class="pop"></p>
+  </div>
+
+</div>
+
+</h:body>
+</html>

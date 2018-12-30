@@ -1,0 +1,149 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>greeter</title>
+	<link rel="stylesheet" href="css/general.css"></link>
+	<script src="js/index_admin.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+</h:head>
+<h:body>
+	<ul class="nav">
+		<li class="navItem"><a href="login.xhtml">Home</a></li>
+		<li class="navItem"><a href="aboutus.html">About us</a></li>
+		<li class="navItem"><a onclick="myFunction()">Help</a></li>
+
+
+	</ul>
+	<h1>Know your market value</h1>
+	<div class="info">
+		<p>prediction made with K-means algorithm</p>
+	</div>
+
+	<h:form id="generalForm" action="Predict?faces-redirect=true"
+		value="Predict">
+		<h1>Fill in the details to know your expected income range!!!</h1>
+
+		<div class="contentform">
+			<div id="sendmessage">Your message has been sent successfully.
+				Thank you.</div>
+
+
+			<div class="leftcontact">
+				<div class="form-group">
+					<p>
+						IQ Level:<span>(0 to 100)</span>
+					</p>
+					<h:outputLabel for="data_input_1"></h:outputLabel>
+					<h:inputText id="data_input_1"
+						value="#{generalController.dataInput1}" />
+					<div class="validation"></div>
+				</div>
+
+				<div class="form-group">
+					<p>Age:</p>
+					<h:outputLabel for="data_input_2"></h:outputLabel>
+					<h:inputText id="data_input_2"
+						value="#{generalController.dataInput2}" />
+					<div class="validation"></div>
+				</div>
+
+				<div class="form-group">
+					<p>
+						Education level: <span></span>
+					</p>
+					<h:selectOneMenu value="#{generalController.dataInput3}">
+						<f:selectItem itemValue="0" itemLabel="No Education" />
+						<f:selectItem itemValue="1" itemLabel="Primary school" />
+						<f:selectItem itemValue="2" itemLabel="Junior school" />
+						<f:selectItem itemValue="5" itemLabel="High school" />
+						<f:selectItem itemValue="8" itemLabel="Diplomo" />
+						<f:selectItem itemValue="12" itemLabel="Undergraduate" />
+						<f:selectItem itemValue="16" itemLabel="Post-graduate" />
+						<f:selectItem itemValue="20" itemLabel="Doctrate or Phd" />
+					</h:selectOneMenu>
+					<div class="validation"></div>
+				</div>
+
+				<div class="form-group">
+					<p>Expertise Level:</p>
+					<h:selectOneMenu value="#{generalController.dataInput4}">
+						<f:selectItem itemValue="25" itemLabel="Novice" />
+						<f:selectItem itemValue="50" itemLabel="Intermediate" />
+						<f:selectItem itemValue="100" itemLabel="Expert" />
+					</h:selectOneMenu>
+					<div class="validation"></div>
+				</div>
+
+				<div class="form-group">
+					<p>Occupation type:</p>
+					<h:selectOneMenu value="#{generalController.dataInput5}">
+						<f:selectItem itemValue="100" itemLabel="private" />
+						<f:selectItem itemValue="60" itemLabel="government" />
+						<f:selectItem itemValue="40" itemLabel="Self" />
+					</h:selectOneMenu>
+					<div class="validation"></div>
+				</div>
+
+			</div>
+
+			<div class="rightcontact">
+
+				<div class="form-group">
+					<p>Years of education:</p>
+					<h:outputLabel for="data_input_6"></h:outputLabel>
+					<h:inputText id="data_input_6"
+						value="#{generalController.dataInput6}" />
+					<div class="validation"></div>
+				</div>
+
+				<div class="form-group">
+					<p>work hours per:</p>
+					<h:outputLabel for="data_input_7"></h:outputLabel>
+					<h:inputText id="data_input_7"
+						value="#{generalController.dataInput7}" />
+					<br /> <br />
+					<div class="validation"></div>
+				</div>
+
+
+				<div class="form-group">
+					<p>Model Name:</p>
+					<h:outputLabel for="modelOutput"></h:outputLabel>
+					<h:inputText id="modelOutput"
+						value="#{generalController.modelOutput}" />
+					<div class="validation"></div>
+				</div>
+
+				<div class="form-group">
+					<p>Predicted Income Range (per year):</p>
+
+					<h:outputText value="#{generalController.output}"
+						rendered="#{not empty generalController.output}" />
+					<div class="validation"></div>
+				</div>
+				<br /> <br />
+			</div>
+		</div>
+		<h:commandButton id="submit" value="Predict Income"
+			class="bouton-contact" action="#{generalController.modelDataPredict}" />
+
+
+	</h:form>
+	<div id="myModal" class="modal">
+
+		<!-- Modal content -->
+		<div class="modal-content">
+			<p id="help" class="pop"></p>
+		</div>
+
+	</div>
+</h:body>
+</html>

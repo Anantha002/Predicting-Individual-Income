@@ -1,0 +1,212 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #111;
+  background-repeat: no-repeat;
+}
+
+.signupSection {
+  background: url(https://source.unsplash.com/TV2gg2kZD1o/1600x800);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 450px;
+  text-align: center;
+  display: flex;
+  color: white;
+  box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, 0.5);
+}
+
+.info {
+  width: 45%;
+  background: rgba(20, 20, 20, 0.8);
+  padding: 30px 0;
+  border-right: 5px solid rgba(30, 30, 30, 0.8);
+}
+.info h2 {
+  padding-top: 30px;
+  font-weight: 300;
+}
+.info p {
+  font-size: 18px;
+}
+.info .icon {
+  font-size: 8em;
+  padding: 20px 0;
+  color: #0ab4b4;
+}
+
+.signupForm {
+  width: 70%;
+  padding: 30px 0;
+  background: rgba(20, 40, 40, 0.8);
+  transition: .2s;
+}
+.signupForm h2 {
+  font-weight: 300;
+}
+
+.inputFields {
+  margin: 15px 0;
+  font-size: 16px;
+  padding: 10px;
+  width: 250px;
+  border: 1px solid #0ab4b4;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background: rgba(20, 20, 20, 0.2);
+  color: white;
+  outline: none;
+}
+
+.noBullet {
+  list-style-type: none;
+  padding: 0;
+}
+
+
+.join-btn {
+  border: 1px solid #0ab4b4;
+  background: rgba(20, 20, 20, 0.6);
+  font-size: 18px;
+  color: white;
+  margin-top: 20px;
+  padding: 10px 50px;
+  cursor: pointer;
+  transition: .4s;
+}
+.join-btn:hover {
+  background: rgba(20, 20, 20, 0.8);
+  padding: 10px 80px;
+}
+
+
+
+
+
+
+
+
+
+.nav {
+      list-style-type: none;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+   background: rgba(7, 0, 0, 0.31);
+    margin-top: 0%;
+    margin-left: -41px;
+}
+.navItem, .navItem a {
+  display:inline-block;
+  flex-grow: 1;
+}
+.navItem a {
+width: 100%;
+    padding-top: 6px;
+    padding-bottom: 11px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(34,34,34,0.4);
+    font-weight: 600;
+    font-size: 18px;
+}
+.navItem:nth-of-type(1) {
+  border-bottom:2px solid #804040;;
+}
+.navItem:nth-of-type(1) a:hover {
+  background:#804040;
+}
+.navItem:nth-of-type(2) {
+  border-bottom:2px solid #8080c0;
+}
+.navItem:nth-of-type(2) a:hover {
+  background:#8080c0;
+}
+.navItem:nth-of-type(3) {
+  border-bottom:2px solid #804040;
+}
+.navItem:nth-of-type(3) a:hover {
+  background:#804040; 
+}
+.navItem:nth-of-type(4) {
+  border-bottom:2px solid #804040;
+}
+.navItem:nth-of-type(4) a:hover {
+  background:#804040;
+}
+.navItem:nth-of-type(5) {
+  border-bottom:2px solid #804040;
+}
+.navItem:nth-of-type(5) a:hover {
+  background:#804040;
+}
+.navItem:nth-of-type(6) {
+  border-bottom:2px solid #804040;
+}
+.navItem:nth-of-type(6) a:hover {
+  background:#804040;
+}
+
+
+
+.pop{
+	font-family: 'Dancing Script', cursive;
+	    margin: 0px;
+    font-weight: 500;
+    line-height: 2;
+    color: #fff;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+
+/* Modal Content/Box */
+.modal-content {
+  color: powderblue;
+    font-family: 'Dancing Script', cursive;
+    background-color: #151313d6;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+

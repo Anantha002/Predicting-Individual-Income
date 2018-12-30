@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+	 xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>greeter</title>
+<link rel="stylesheet" href="css/login.css"></link>
+</h:head>
+<h:body>
+
+<div class="body"></div>
+
+		<div class="grad"></div>
+		<div class="header">
+			<div><b>Login</b><b><span>Page</span></b></div>
+		</div>
+		<br/>
+<div class="login">
+
+		<h:form id="loginForm" >
+         <h:inputText id="username"  a:placeholder=" USERNAME"
+                    value="#{greetController.client_username}" />
+                 <h:message for="username"/><br/><br/>
+              
+                <h:inputSecret id="password" a:placeholder=" PASSWORD"
+                    value="#{greetController.client_password}" />
+            <br/><br/>
+            	
+            <h:commandButton id="greet" value="Login" class="button"
+                action="#{greetController.greet_Login}"/> <br/><br/><br/>
+               
+             <h:outputText value ="#{greetController.error_log}" class="isa_error" 
+            rendered="#{not empty greetController.error_log}"  />
+            <br/><br/>
+          	
+        </h:form></div>
+</h:body>
+</html>

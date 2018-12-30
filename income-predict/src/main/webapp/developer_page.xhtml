@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>greeter</title>
+	<link rel='stylesheet prefetch'
+		href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' />
+	<link rel='stylesheet prefetch'
+		href='https://fonts.googleapis.com/icon?family=Material+Icons' />
+	<script src="js/index_admin.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<link rel="stylesheet" href="css/developer.css" />
+</h:head>
+<h:body>
+	<ul class="nav">
+		<li class="navItem"><a href="login.xhtml">Home</a></li>
+		<li class="navItem"><a href="aboutus.html">About us</a></li>
+		<li class="navItem"><a onclick="myFunction3()">Help</a></li>
+
+
+
+	</ul>
+	<!--  <div class="cotn_principal"> -->
+	<div class="cont_centrar">
+
+		<div class="cont_login">
+			<div class="cont_info_log_sign_up">
+				<div class="col_md_login">
+					<div class="cont_ba_opcitiy">
+
+						<h2>Train Model</h2>
+						<p>Train and generate the model in hadoop filesystem using
+							machine learning algorithm called Kmeans.</p>
+						<button class="btn_login" onclick="cambiar_login()">Train</button>
+					</div>
+				</div>
+				<div class="col_md_sign_up">
+					<div class="cont_ba_opcitiy">
+						<h2>Save Model</h2>
+
+
+						<p>Generate model object and save it in database</p>
+
+						<button class="btn_sign_up" onclick="cambiar_sign_up()">Save</button>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="cont_back_info">
+				<div class="cont_img_back_grey">
+					<h:graphicImage value="images/dev.jpg" alt="" />
+				</div>
+
+			</div>
+			<div class="cont_forms">
+				<div class="cont_img_back_">
+					<h:graphicImage value="images/dev.jpg" alt="" />
+				</div>
+				<div class="cont_form_login">
+					<h:form id="invokehadoop">
+						<a href="#" onclick="ocultar_login_sign_up()"><i
+							class="material-icons">&#xE5C4;</i></a>
+						<h2 class="h">Train Model</h2>
+						<h:commandButton id="submit" value="Train" class="btn_loginn"
+							action="#{developerController.generateModel}" />
+						<br />
+						<br />
+						<h:outputText value="#{developerController.errorLog}"
+							rendered="#{not empty developerController.errorLog}" />
+					</h:form>
+				</div>
+
+				<div class="cont_form_sign_up">
+					<a href="#" onclick="ocultar_login_sign_up()"><i
+						class="material-icons">&#xE5C4;</i></a>
+					<h2>Save Model</h2>
+					<h:form id="devForsm">
+						<h:outputLabel for="input_data"></h:outputLabel>
+						<h:inputText id="input_data"
+							a:placeholder=" Trained model location" class="in"
+							value="#{developerController.inputModelPath}" />
+
+						<br />
+						<br />
+						<h:outputLabel for="model_data"></h:outputLabel>
+						<h:inputText id="model_data" a:placeholder=" Output model name"
+							class="in1" value="#{developerController.modelData}" />
+
+						<br />
+						<br />
+						<br />
+						<h:commandButton id="submit" value="Save" class="btn_sign_up"
+							action="#{developerController.trainDataModel}" />
+						<br />
+						<br />
+						<h:outputText value="#{developerController.errorLog}"
+							rendered="#{not empty developerController.errorLog}" />
+					</h:form>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<div id="myModal" class="modal">
+
+		<!-- Modal content -->
+		<div class="modal-content">
+			<p id="help" class="pop"></p>
+		</div>
+
+	</div>
+
+	<script src="js/indexx.js"></script>
+
+
+
+
+
+</h:body>
+</html>
